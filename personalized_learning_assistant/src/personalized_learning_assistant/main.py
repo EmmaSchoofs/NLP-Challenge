@@ -2,6 +2,15 @@
 import sys
 import warnings
 
+from crewai.cli.constants import ENV_VARS
+ENV_VARS.update(
+    {"ollama":
+      [{
+            "prompt": "Enter your OLLAMA API_BASE (press Enter to skip)",
+            "key_name": "API_BASE",
+        }
+    ]})
+
 from personalized_learning_assistant.crew import PersonalizedLearningAssistant
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
