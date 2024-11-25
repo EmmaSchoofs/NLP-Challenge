@@ -1,4 +1,4 @@
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 
 # Uncomment the following line to use an example of a custom tool
@@ -27,6 +27,16 @@ class PersonalizedLearningAssistant():
 		return Agent(
 			config=self.agents_config['reporting_analyst'],
 			verbose=True
+		)
+	
+	# Agent using ollama (run the command 'ollama run llama2' to run the Llama 2 model locally) NOT TESTED PROPERLY
+	@agent
+	def llama(self) -> Agent:
+		return Agent(
+			role='Local AI Expert',
+			goal='Process information using a local model',
+			backstory="An AI assistant running on local hardware.",
+			llm=LLM(model="ollama/llama3.2", base_url="http://localhost:11434")
 		)
 
 	@task
