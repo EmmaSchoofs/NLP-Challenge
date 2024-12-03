@@ -1,0 +1,28 @@
+researcher:
+  name: "Researcher Agent"
+  description: "Handles content processing and research tasks."
+  type: "agent"
+  tool: "groq_api"
+  max_tokens: 1000
+  timeout: 60
+  temperature: 0.7
+  top_p: 0.9
+  presence_penalty: 0.6
+  frequency_penalty: 0.4
+  llm: groq/llama-3.1-70b-versatile
+
+
+reporting_analyst:
+  name: "Reporting Analyst Agent"
+  description: "Responsible for generating and formatting reports based on research."
+  type: "agent"
+  tool: "groq_api"
+  max_tokens: 1500
+  timeout: 90
+  temperature: 0.5
+  top_p: 0.85
+  presence_penalty: 0.2
+  frequency_penalty: 0.3
+  output_format: "markdown"
+  llm: groq/llama-3.1-70b-versatile
+
