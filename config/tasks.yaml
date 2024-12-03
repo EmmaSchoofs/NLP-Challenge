@@ -1,0 +1,51 @@
+research_task:
+  name: "Research Task"
+  description: "Collect and preprocess research materials, including PDFs."
+  type: "ingestion"
+  input_format: "pdf"
+  output_format: "vector_data"
+  processing_steps:
+    - "Extract text from PDFs"
+    - "Clean and preprocess data"
+    - "Store in vector database"
+  tools:
+    - "pdf_extractor_tool" 
+  parameters:
+    - name: "file_paths"
+      type: "list"
+      description: "List of file paths to the PDF documents"
+    - name: "vector_database"
+      type: "db"
+      description: "The vector database to store processed content"
+  
+
+reporting_task:
+  name: "Reporting Task"
+  description: "Generate a markdown report from research results."
+  type: "report_generation"
+  input_format: "research_data"
+  output_format: "markdown"
+  output_file: "report.md"
+  parameters:
+    - name: "research_results"
+      type: "json"
+      description: "The research data that needs to be formatted into a report"
+    - name: "report_template"
+      type: "string"
+      description: "Template to be used for formatting the report"
+  tools:
+    - "markdown_formatter_tool"
+
+cheatsheet_task:
+  name: "CheatSheet Task"
+  description: "Create a one-page summary of key concepts."
+  type: "summary"
+  input_format: "research_data"
+  output_format: "pdf"
+  output_file: "cheatsheet.pdf"
+  parameters:
+    - name: "research_results"
+      type: "json"
+      description: "The research data to generate a summary from"
+  tools:
+    - "summary_tool"
