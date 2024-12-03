@@ -2,44 +2,51 @@ import streamlit as st
 import random
 import time
 from crewai import Agent, Task, Crew, Process
+from crewai.project import CrewBase, agent, crew, task
 
 
 task_values = []
 
-def create_crewai_setup(query):
+@CrewBase
+class PersonalizedLearningAssistant():
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
 
-    # Define Agents
-    researcher = Agent(
-        config=agents_config['content_ingestion_agent'],
-        verbose=True
+    @agent
+    def researcher(self) -> Agent:
+        return Agent(
+            config=self.agents_config['content_ingestion_agent'],
+            verbose=True
+        )
+    
+    @agent
+    def reporting_analyst(self) -> Agent:
+        return Agent(
+            config=self.agents_config['reporting_analyst'],
+            verbose=True
+        )
+
+    @task
+    def research_task(self) -> Task: 
+        return Task(
+            config=self.tasks_config['research_task']
+    )
+        
+    @task
+    def reporting_task(self) -> Task: 
+        return Task(
+            config=self.tasks_config['reporting_task']
     )
 
-    reporting_analyst = Agent(
-        config=agents_config['question_answering_agent'],
-        verbose=True
-    )
+    @crew
+    def crew(self) -> Crew:
+        return Crew(
+            agents=self.agents,
+            tasks=self.tasks,
+            verbose=True,
+            process=Process.sequential,
+        )
 
-    #Define Tasks
-    research_task = Task(
-        config=tasks_config['research_task'],
-        agent = researcher
-    )
-
-    reporting_task = Task(
-        config=tasks_config['reporting_task'].
-        agent = reporting_analyst
-    )
-
-    crew = Crew(
-        agents=[researcher, reporting_analyst],
-        tasks=[research_task, reporting_task],
-        verbose=2,
-        process=Process.sequential,
-    )
-
-    return crew
 
 
 def run_crewai_app():
@@ -63,9 +70,12 @@ def run_crewai_app():
             # Start the stopwatch
             start_time = time.time()
             with st.expander("Processing!"):
-                sys.stdout = StreamToExpander(st)
+                # sys.stdout = StreamToExpander(st)
                 with st.spinner("Generating Results"):
-                    crew_result = create_crewai_setup(product_name)
+                    pla_instance = PersonalizedLearningAssistant()
+                    crew_instance = pla_instance.crew()
+                    crew_result = crew_instance.kickoff(inputs={"query": query})
+
 
             # Stop the stopwatch
             end_time = time.time()
