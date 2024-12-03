@@ -3,3 +3,7 @@ crewai
 crewai-tools
 flask
 requests
+markdown
+PyPDF2
+python-dotenv
+sentence-transformers

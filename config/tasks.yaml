@@ -1,6 +1,6 @@
 research_task:
   name: "Research Task"
-  description: "Collect and preprocess research materials, including PDFs."
+  description: "Collect and preprocess research materials, including PDFs, based on {topic}"
   type: "ingestion"
   input_format: "pdf"
   output_format: "vector_data"
@@ -9,7 +9,9 @@ research_task:
     - "Clean and preprocess data"
     - "Store in vector database"
   tools:
-    - "pdf_extractor_tool" 
+    - pdf_extractor
+    - vector_database
+    - rag_tool 
   parameters:
     - name: "file_paths"
       type: "list"
@@ -34,7 +36,8 @@ reporting_task:
       type: "string"
       description: "Template to be used for formatting the report"
   tools:
-    - "markdown_formatter_tool"
+    - markdown_formatter
+    - summary_tool
 
 cheatsheet_task:
   name: "CheatSheet Task"
