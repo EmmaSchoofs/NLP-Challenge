@@ -1,2 +1,4 @@
 /NLP_challenge_env
 .env
+/venv
+init.ipynb
