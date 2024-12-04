@@ -3,6 +3,8 @@ import random
 import time
 from crewai import Agent, Task, Crew, Process
 from crewai.project import CrewBase, agent, crew, task
+from tools import tool_functions
+
 
 
 task_values = []
@@ -15,28 +17,49 @@ class PersonalizedLearningAssistant():
     @agent
     def researcher(self) -> Agent:
         return Agent(
-            config=self.agents_config['content_ingestion_agent'],
+            config=self.agents_config['researcher'],
+            tools=[
+                tool_functions["GroqLLMTool"](),  # Initialize GroqLLMTool
+                tool_functions["PDFExtractionTool"](),  # Initialize PDFExtractionTool
+            ],
             verbose=True
         )
+
     
     @agent
     def reporting_analyst(self) -> Agent:
         return Agent(
             config=self.agents_config['reporting_analyst'],
+            tools=[
+                tool_functions["MarkdownFormatter"](),  # Initialize MarkdownFormatter
+                tool_functions["SummaryTool"](tool_functions["GroqLLMTool"]()),  # Pass GroqLLMTool to SummaryTool
+            ],
             verbose=True
         )
 
+
     @task
-    def research_task(self) -> Task: 
+    def research_task(self) -> Task:
         return Task(
-            config=self.tasks_config['research_task']
-    )
+            config=self.tasks_config['research_task'],
+            tools=[
+                tool_functions["GroqLLMTool"](),
+                tool_functions["PDFExtractionTool"]()
+            ],
+        )
+
         
     @task
-    def reporting_task(self) -> Task: 
+    def reporting_task(self) -> Task:
         return Task(
-            config=self.tasks_config['reporting_task']
-    )
+            config=self.tasks_config['reporting_task'],
+            tools=[
+                tool_functions["MarkdownFormatter"](),
+                tool_functions["SummaryTool"](tool_functions["GroqLLMTool"]())  # Pass GroqLLMTool to SummaryTool
+            ],
+            output_file='report.md',  # If necessary, keep this line
+        )
+
 
     @crew
     def crew(self) -> Crew:
