@@ -20,24 +20,6 @@ class PDFExtractionTool:
         return text
 
 
-class RAGTool:
-    def __init__(self, llm_tool, vector_db_tool, embedder_model='all-MiniLM-L6-v2'):
-        self.llm_tool = llm_tool
-        self.vector_db_tool = vector_db_tool
-        self.embedder = SentenceTransformer(embedder_model)
-
-    def generate_answer(self, question):
-        # Generate query vector
-        query_vector = self.embedder.encode(question)
-        
-        # Retrieve relevant content
-        relevant_content = self.vector_db_tool.retrieve(query_vector)
-        
-        # Generate answer using the LLM
-        answer = self.llm_tool.generate_with_context(question, relevant_content)
-        return answer
-
-
 class MarkdownFormatter:
     def format(self, content):
         return markdown.markdown(content)
@@ -52,18 +34,7 @@ class SummaryTool:
         return self.llm_tool.generate_summary(content)
 
 
-
-class QuizTool:
-    def __init__(self, llm_tool):
-        self.llm_tool = llm_tool
-
-    def generate_quiz(self, content):
-        return self.llm_tool.generate_quiz(content)
-
-
 class GroqLLMTool:
-    api_key = os.getenv("GROQ_API_KEY")
-
     def __init__(self, api_key, model_name):
         self.api_key = api_key
         self.model_name = model_name
@@ -88,3 +59,19 @@ class GroqLLMTool:
         except requests.exceptions.RequestException as e:
             logging.error(f"Groq API Error: {e}")
             return "An error occurred while processing your request."
+
+
+# Map tools to their classes
+tool_functions = {
+    "PDFExtractionTool": PDFExtractionTool,
+    "MarkdownFormatter": MarkdownFormatter,
+    "SummaryTool": SummaryTool,
+    "GroqLLMTool": lambda: GroqLLMTool(
+        api_key=os.getenv("GROQ_API_KEY"),
+        model_name="groq/llama-3.1-70b-versatile",
+    ),
+}
+
+
+logging.basicConfig(level=logging.DEBUG)
+logging.debug(f"Registered tools: {list(tool_functions.keys())}")
