@@ -3,8 +3,8 @@ research_task:
     Collect and preprocess research materials, including PDFs, based on {topic}
   expected_output: >
     A vector database with findingds from {topic}.
-  tools:
-    - PDFExtractionTool
+  agent: researcher
+
   
 
 reporting_task:
@@ -14,6 +14,5 @@ reporting_task:
     A detailed report based on the findings of research.
   output_file: >
     report.md
-  tools:
-    - MarkdownFormatter
-    - SummaryTool
+  agent: reporting_analyst
+

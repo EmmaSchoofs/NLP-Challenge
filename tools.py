@@ -5,13 +5,19 @@ import markdown
 from sentence_transformers import SentenceTransformer
 import requests
 import logging
+from crewai_tools import BaseTool
+from typing import Any, Optional
 
 
 # Load environment variables
 load_dotenv()
 
-class PDFExtractionTool:
-    def extract_text(self, pdf_path):
+class PDFExtractionTool(BaseTool):
+    name: str = "PDF Extraction Tool"
+    description: str = "This tool will extract text from a pdf file."
+    pdf_path: str
+
+    def _run(self):
         text = ""
         with open(pdf_path, 'rb') as pdf_file:
             reader = PyPDF2.PdfReader(pdf_file)
@@ -20,56 +26,59 @@ class PDFExtractionTool:
         return text
 
 
-class MarkdownFormatter:
-    def format(self, content):
+class MarkdownFormatter(BaseTool):
+    name: str = "Markdown Formatter"
+    description: str = "This tool will convert any content to markdown."
+
+    def _run(self, content: Optional[str] = None):
+        if not content:
+            return "No content provided"
         return markdown.markdown(content)
 
 
 
-class SummaryTool:
-    def __init__(self, llm_tool):
-        self.llm_tool = llm_tool
+class SummaryTool(BaseTool):
+    name: str = "Summary Tool"
+    description: str = "This tool will give a summary of any content using an llm tool."
+    llm_tool: Any
 
-    def generate_summary(self, content):
+    def _run(self, content: Optional[str] = None):
+        if not content:
+            return "No content provided1."
         return self.llm_tool.generate_summary(content)
 
 
-class GroqLLMTool:
-    def __init__(self, api_key, model_name):
-        self.api_key = api_key
-        self.model_name = model_name
-        self.base_url = "https://api.groq.com/openai/v1/chat"
+# class GroqLLMTool:
+#     def __init__(self, api_key, model_name):
+#         self.api_key = api_key
+#         self.model_name = model_name
+#         self.base_url = "https://api.groq.com/openai/v1/chat"
 
-    def generate(self, prompt, max_tokens=100, temperature=0.7):
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json",
-        }
-        data = {
-            "model": self.model_name,
-            "prompt": prompt,
-            "max_tokens": max_tokens,
-            "temperature": temperature,
-        }
-        try:
-            response = requests.post(f"{self.base_url}/completions", headers=headers, json=data)
-            response.raise_for_status()
-            result = response.json()
-            return result.get("choices", [{}])[0].get("text", "")
-        except requests.exceptions.RequestException as e:
-            logging.error(f"Groq API Error: {e}")
-            return "An error occurred while processing your request."
-
+#     def generate(self, prompt, max_tokens=100, temperature=0.7):
+#         headers = {
+#             "Authorization": f"Bearer {self.api_key}",
+#             "Content-Type": "application/json",
+#         }
+#         data = {
+#             "model": self.model_name,
+#             "prompt": prompt,
+#             "max_tokens": max_tokens,
+#             "temperature": temperature,
+#         }
+#         try:
+#             response = requests.post(f"{self.base_url}/completions", headers=headers, json=data)
+#             response.raise_for_status()
+#             result = response.json()
+#             return result.get("choices", [{}])[0].get("text", "")
+#         except requests.exceptions.RequestException as e:
+#             logging.error(f"Groq API Error: {e}")
+#             return "An error occurred while processing your request."
 
 # Map tools to their classes
 tool_functions = {
-    "PDFExtractionTool": PDFExtractionTool,
+    "PDFExtractionTool": lambda pdf_path: PDFExtractionTool(pdf_path=pdf_path),
     "MarkdownFormatter": MarkdownFormatter,
-    "SummaryTool": SummaryTool,
-    "GroqLLMTool": lambda: GroqLLMTool(
-        api_key=os.getenv("GROQ_API_KEY"),
-        model_name="groq/llama-3.1-70b-versatile",
-    ),
+    "SummaryTool": lambda llm_tool: SummaryTool(llm_tool=llm_tool),
 }
 
 

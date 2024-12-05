@@ -4,24 +4,31 @@ import time
 from crewai import Agent, Task, Crew, Process
 from crewai.project import CrewBase, agent, crew, task
 from tools import tool_functions
+import logging
+from langchain_groq import ChatGroq
+import os
 
 
+# llm=ChatGroq(temperature=0,
+#              model_name="llama-3.1-70b-versatile",
+#              api_key=os.getenv("GROQ_API_KEY"))
 
 task_values = []
 
 @CrewBase
 class PersonalizedLearningAssistant():
+    logging.basicConfig(level=logging.DEBUG)
+    logging.debug(f"2Registered tools: {tool_functions}")
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
 
     @agent
     def researcher(self) -> Agent:
+        pdf_tool = tool_functions["PDFExtractionTool"](pdf_path="Metazoa__review.pdf")
         return Agent(
+            llm=llm,
             config=self.agents_config['researcher'],
-            tools=[
-                tool_functions["GroqLLMTool"](),  # Initialize GroqLLMTool
-                tool_functions["PDFExtractionTool"](),  # Initialize PDFExtractionTool
-            ],
+            tools=[pdf_tool],
             verbose=True
         )
 
@@ -29,11 +36,13 @@ class PersonalizedLearningAssistant():
     @agent
     def reporting_analyst(self) -> Agent:
         return Agent(
+            llm=llm,
             config=self.agents_config['reporting_analyst'],
             tools=[
-                tool_functions["MarkdownFormatter"](),  # Initialize MarkdownFormatter
-                tool_functions["SummaryTool"](tool_functions["GroqLLMTool"]()),  # Pass GroqLLMTool to SummaryTool
+                tool_functions["MarkdownFormatter"](),  
+                tool_functions["SummaryTool"](llm_tool=llm), 
             ],
+            args_schema={"content": "Default content for testing"},
             verbose=True
         )
 
@@ -42,9 +51,9 @@ class PersonalizedLearningAssistant():
     def research_task(self) -> Task:
         return Task(
             config=self.tasks_config['research_task'],
+            agents=[self.researcher()],
             tools=[
-                tool_functions["GroqLLMTool"](),
-                tool_functions["PDFExtractionTool"]()
+                tool_functions["PDFExtractionTool"](pdf_path="Metazoa__review.pdf")
             ],
         )
 
@@ -53,22 +62,26 @@ class PersonalizedLearningAssistant():
     def reporting_task(self) -> Task:
         return Task(
             config=self.tasks_config['reporting_task'],
+            agents=[self.reporting_analyst()],
             tools=[
                 tool_functions["MarkdownFormatter"](),
-                tool_functions["SummaryTool"](tool_functions["GroqLLMTool"]())  # Pass GroqLLMTool to SummaryTool
+                tool_functions["SummaryTool"](llm_tool=llm)  
             ],
-            output_file='report.md',  # If necessary, keep this line
+            output_file='report.md', 
         )
 
 
     @crew
     def crew(self) -> Crew:
-        return Crew(
-            agents=self.agents,
-            tasks=self.tasks,
-            verbose=True,
-            process=Process.sequential,
+        logging.debug("Initializing Crew with tasks and agents...")
+        crew = Crew(
+            agents=[self.researcher(), self.reporting_analyst()],
+            tasks=[self.research_task(), self.reporting_task()],
+            verbose=True
         )
+        logging.debug(f"Crew initialized: {crew}")
+        return crew
+
 
 
 
@@ -84,7 +97,7 @@ def run_crewai_app():
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    query = st.text_input("ask me anything")
+    content = st.text_input("ask me anything")
 
     if st.button("Go"):
         # Placeholder for stopwatch
@@ -96,8 +109,9 @@ def run_crewai_app():
                 # sys.stdout = StreamToExpander(st)
                 with st.spinner("Generating Results"):
                     pla_instance = PersonalizedLearningAssistant()
+
                     crew_instance = pla_instance.crew()
-                    crew_result = crew_instance.kickoff(inputs={"query": query})
+                    crew_result = crew_instance.kickoff(inputs={"topic": content})
 
 
             # Stop the stopwatch
@@ -140,4 +154,8 @@ def run_crewai_app():
 #     st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 if __name__ == "__main__":
+    llm=ChatGroq(temperature=0,
+             model_name="groq/llama3-8b-8192",
+             api_key=os.getenv("GROQ_API_KEY"))
+    
     run_crewai_app()

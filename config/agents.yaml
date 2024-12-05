@@ -5,8 +5,6 @@ researcher:
     Handles content processing and research {topic}.
   backstory: >
     You're an expert researcher in the field of {topic}.
-  tools:
-    - GroqLLMTool
   llm: >
     groq/llama-3.1-70b-versatile
 
@@ -16,10 +14,8 @@ reporting_analyst:
     Reporting Analyst Agent
   goal: >
     Responsible for generating and formatting reports based on research.
-  description: >
+  backstory: >
     You work together with a researcher and hand out detailed reports abouts the findings.
-  tools:
-    - GroqLLMTool
   output_format: >
     markdown
   llm: >
