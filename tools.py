@@ -19,7 +19,7 @@ class PDFExtractionTool(BaseTool):
 
     def _run(self):
         text = ""
-        with open(pdf_path, 'rb') as pdf_file:
+        with open(self.pdf_path, 'rb') as pdf_file:
             reader = PyPDF2.PdfReader(pdf_file)
             for page in reader.pages:
                 text += page.extract_text()
