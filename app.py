@@ -7,13 +7,26 @@ from tools import tool_functions
 import logging
 from langchain_groq import ChatGroq
 import os
+from crewai_tools import PDFSearchTool
+import os
 
+cwd = os.getcwd()
+
+# List all files and directories in the CWD
+files = os.listdir(cwd)
+
+# Print the files
+print("Files in the current working directory:")
+for file in files:
+    print(file)
 
 # llm=ChatGroq(temperature=0,
 #              model_name="llama-3.1-70b-versatile",
 #              api_key=os.getenv("GROQ_API_KEY"))
 
 task_values = []
+# pdfsearchtool = PDFSearchTool(pdf="Nexus_review.pdf")
+file_path = './Nexus_review.pdf'
 
 @CrewBase
 class PersonalizedLearningAssistant():
@@ -22,9 +35,16 @@ class PersonalizedLearningAssistant():
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
 
+
+    def __init__(self):
+        self.researcher_content = None
+
+
     @agent
     def researcher(self) -> Agent:
-        pdf_tool = tool_functions["PDFExtractionTool"](pdf_path="Metazoa__review.pdf")
+        pdf_tool = tool_functions["PDFExtractionTool"](pdf_path=file_path)
+        extracted_content = pdf_tool._run()
+        self.researcher_content = extracted_content
         return Agent(
             llm=llm,
             config=self.agents_config['researcher'],
@@ -35,14 +55,16 @@ class PersonalizedLearningAssistant():
     
     @agent
     def reporting_analyst(self) -> Agent:
+        extracted_content = self.researcher_content
+        print(extracted_content)
         return Agent(
             llm=llm,
             config=self.agents_config['reporting_analyst'],
-            tools=[
-                tool_functions["MarkdownFormatter"](),  
-                tool_functions["SummaryTool"](llm_tool=llm), 
+            tools= [
+            tool_functions["MarkdownFormatter"](content=extracted_content),
+            tool_functions["SummaryTool"](llm_tool=llm, content=extracted_content)
             ],
-            args_schema={"content": "Default content for testing"},
+            # args_schema={"content": "Default content for testing"},
             verbose=True
         )
 
@@ -53,7 +75,7 @@ class PersonalizedLearningAssistant():
             config=self.tasks_config['research_task'],
             agents=[self.researcher()],
             tools=[
-                tool_functions["PDFExtractionTool"](pdf_path="Metazoa__review.pdf")
+                tool_functions["PDFExtractionTool"](pdf_path=file_path)
             ],
         )
 

@@ -23,6 +23,8 @@ class PDFExtractionTool(BaseTool):
             reader = PyPDF2.PdfReader(pdf_file)
             for page in reader.pages:
                 text += page.extract_text()
+        text = text.strip()
+        print(text)
         return text
 
 
@@ -44,7 +46,7 @@ class SummaryTool(BaseTool):
 
     def _run(self, content: Optional[str] = None):
         if not content:
-            return "No content provided1."
+            return "No content provided."
         return self.llm_tool.generate_summary(content)
 
 
@@ -78,7 +80,7 @@ class SummaryTool(BaseTool):
 tool_functions = {
     "PDFExtractionTool": lambda pdf_path: PDFExtractionTool(pdf_path=pdf_path),
     "MarkdownFormatter": MarkdownFormatter,
-    "SummaryTool": lambda llm_tool: SummaryTool(llm_tool=llm_tool),
+    "SummaryTool": lambda llm_tool, content = None: SummaryTool(llm_tool=llm_tool, content=content),
 }
 
 
