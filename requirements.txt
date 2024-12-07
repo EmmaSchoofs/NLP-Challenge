@@ -8,3 +8,4 @@ PyPDF2
 python-dotenv
 sentence-transformers
 langchain_groq
+torch==2.0.0
