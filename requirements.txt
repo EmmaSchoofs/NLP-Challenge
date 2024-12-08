@@ -3,3 +3,10 @@ crewai
 crewai-tools
 flask
 requests
+markdown
+PyPDF2
+python-dotenv
+sentence-transformers
+langchain_groq
+torch==2.0.0
+langchain_groq

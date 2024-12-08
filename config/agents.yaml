@@ -1,0 +1,23 @@
+researcher:
+  role: >
+    {topic} Researcher Agent
+  goal: >
+    Handles content processing and research {topic}.
+  backstory: >
+    You're an expert researcher in the field of {topic}.
+  llm: >
+    groq/llama-3.1-70b-versatile
+
+
+reporting_analyst:
+  role: >
+    Reporting Analyst Agent
+  goal: >
+    Responsible for generating and formatting reports based on research.
+  backstory: >
+    You work together with a researcher and hand out detailed reports abouts the findings.
+  output_format: >
+    markdown
+  llm: >
+    groq/llama-3.1-70b-versatile
+

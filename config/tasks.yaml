@@ -1,0 +1,18 @@
+research_task:
+  description: >
+    Collect and preprocess research materials, including PDFs, based on {topic}
+  expected_output: >
+    A vector database with findingds from {topic}.
+  agent: researcher
+
+  
+
+reporting_task:
+  description: >
+    Generate a markdown report from research results.
+  expected_output: >
+    A detailed report based on the findings of research.
+  output_file: >
+    report.md
+  agent: reporting_analyst
+
