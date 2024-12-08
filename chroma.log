@@ -1,0 +1,266 @@
+[33mWARNING[0m:  [02-12-2024 17:12:32] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [02-12-2024 17:12:33] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [02-12-2024 17:12:33] Starting component System
+[36mDEBUG[0m:    [02-12-2024 17:12:33] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [02-12-2024 17:12:33] Starting component SqliteDB
+[36mDEBUG[0m:    [02-12-2024 17:12:34] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [02-12-2024 17:12:34] Starting component Posthog
+[36mDEBUG[0m:    [02-12-2024 17:12:34] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [02-12-2024 17:12:34] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [02-12-2024 17:12:34] Starting component LocalExecutor
+[36mDEBUG[0m:    [02-12-2024 17:12:34] Starting component SegmentAPI
+[32mINFO[0m:     [02-12-2024 17:12:34] Started server process [[36m30528[0m]
+[32mINFO[0m:     [02-12-2024 17:12:34] Waiting for application startup.
+[32mINFO[0m:     [02-12-2024 17:12:34] Application startup complete.
+[32mINFO[0m:     [02-12-2024 17:12:34] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [02-12-2024 17:12:45] ::1:51043 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [02-12-2024 17:12:46] ::1:51043 - "GET /favicon.ico HTTP/1.1" 404
+[32mINFO[0m:     [02-12-2024 17:16:02] ::1:51183 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:16:03] ::1:51184 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:16:03] ::1:51184 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:16:03] ::1:51183 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:44:53] ::1:53141 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:44:53] ::1:53142 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:44:53] ::1:53142 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:44:53] ::1:53141 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 409
+[32mINFO[0m:     [02-12-2024 17:45:38] ::1:53182 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:45:38] ::1:53183 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:45:38] ::1:53183 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:45:38] ::1:53182 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 409
+[32mINFO[0m:     [02-12-2024 17:48:30] ::1:53308 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:48:31] ::1:53310 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:48:31] ::1:53310 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:48:31] ::1:53308 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:48:53] ::1:53325 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [02-12-2024 17:48:53] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [02-12-2024 17:48:53] ::1:53325 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[32mINFO[0m:     [02-12-2024 17:51:06] ::1:53443 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:51:06] ::1:53444 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:51:06] ::1:53444 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:51:06] ::1:53443 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:51:28] ::1:53465 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:51:28] ::1:53466 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:51:28] ::1:53466 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:51:28] ::1:53465 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 17:51:35] ::1:53475 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 17:51:35] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 17:51:35] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 17:51:35] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 17:51:35] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 17:51:35] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 17:51:35] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 17:51:35] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 17:51:35] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 17:51:35] ::1:53475 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[32mINFO[0m:     [02-12-2024 18:03:58] ::1:53975 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:03:58] ::1:53977 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:03:58] ::1:53977 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:03:58] ::1:53975 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:04:03] ::1:53975 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:04:03] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:04:03] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:04:03] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:04:03] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:04:03] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:04:03] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:04:03] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:04:03] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:04:03] ::1:53975 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[32mINFO[0m:     [02-12-2024 18:04:25] ::1:54003 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:04:26] ::1:54004 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:04:26] ::1:54004 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:04:26] ::1:54003 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:04:31] ::1:54003 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:04:31] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:04:31] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:04:31] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:04:31] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:04:31] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:04:31] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:04:31] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:04:31] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:04:31] ::1:54003 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[32mINFO[0m:     [02-12-2024 18:07:53] ::1:54186 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:07:53] ::1:54187 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:07:53] ::1:54187 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:07:53] ::1:54186 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:07:58] ::1:54186 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:07:58] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:07:58] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:07:58] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:07:58] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:07:58] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:07:58] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:07:58] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:07:58] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:07:58] ::1:54186 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[32mINFO[0m:     [02-12-2024 18:08:56] ::1:54240 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:08:57] ::1:54242 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:08:57] ::1:54242 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:08:57] ::1:54240 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:09:02] ::1:54248 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:09:02] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:09:02] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:09:02] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:09:02] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:09:02] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:09:02] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:09:02] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:09:02] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:09:02] ::1:54248 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[33mWARNING[0m:  [02-12-2024 18:09:22] Number of requested results 5 is greater than number of elements in index 4, updating n_results = 4
+[32mINFO[0m:     [02-12-2024 18:09:22] ::1:54267 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/query HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:09:31] ::1:54277 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [02-12-2024 18:11:05] ::1:54370 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:11:05] ::1:54371 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:11:05] ::1:54371 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:11:05] ::1:54370 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:11:10] ::1:54370 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:11:10] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:11:10] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:11:10] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:11:10] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:11:10] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:11:10] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:11:10] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:11:10] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:11:10] ::1:54370 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[33mWARNING[0m:  [02-12-2024 18:11:23] Number of requested results 5 is greater than number of elements in index 4, updating n_results = 4
+[32mINFO[0m:     [02-12-2024 18:11:23] ::1:54388 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/query HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:15:45] ::1:54578 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:15:45] ::1:54579 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:15:45] ::1:54579 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:15:45] ::1:54578 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:15:53] ::1:54587 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:15:53] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:15:53] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:15:53] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:15:53] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:15:53] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:15:53] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:15:53] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:15:53] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:15:53] ::1:54587 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[33mWARNING[0m:  [02-12-2024 18:16:06] Number of requested results 5 is greater than number of elements in index 4, updating n_results = 4
+[32mINFO[0m:     [02-12-2024 18:16:06] ::1:54607 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/query HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:17:25] ::1:54663 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:17:26] ::1:54664 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:17:26] ::1:54664 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:17:26] ::1:54663 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:17:31] ::1:54663 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:17:31] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:17:31] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:17:31] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:17:31] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:17:31] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:17:31] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:17:31] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:17:31] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:17:31] ::1:54663 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[33mWARNING[0m:  [02-12-2024 18:17:38] Number of requested results 5 is greater than number of elements in index 4, updating n_results = 4
+[32mINFO[0m:     [02-12-2024 18:17:38] ::1:54685 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/query HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:19:22] ::1:54763 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:19:22] ::1:54765 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:19:23] ::1:54765 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:19:23] ::1:54763 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:19:29] ::1:54772 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:19:29] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:19:29] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:19:29] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:19:29] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:19:29] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:19:29] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:19:29] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:19:29] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:19:29] ::1:54772 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[32mINFO[0m:     [02-12-2024 18:24:21] ::1:55029 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:24:21] ::1:55030 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:24:21] ::1:55030 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:24:21] ::1:55029 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:24:25] ::1:55037 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:24:26] ::1:55038 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:24:26] ::1:55038 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:24:26] ::1:55037 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:24:31] ::1:55043 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:24:31] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:24:31] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:24:31] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:24:31] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:24:31] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:24:31] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:24:31] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:24:31] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:24:31] ::1:55043 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[32mINFO[0m:     [02-12-2024 18:25:19] ::1:55080 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:25:20] ::1:55081 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:25:20] ::1:55081 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:25:20] ::1:55080 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:25:24] ::1:55080 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:25:24] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:25:24] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:25:24] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:25:24] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:25:24] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:25:24] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:25:24] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:25:24] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:25:24] ::1:55080 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[32mINFO[0m:     [02-12-2024 18:27:16] ::1:55202 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:27:16] ::1:55203 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:27:16] ::1:55203 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:27:16] ::1:55202 - "GET /api/v2/tenants/default_tenant/databases/default_database/collections/sample_collection HTTP/1.1" 200
+[32mINFO[0m:     [02-12-2024 18:27:21] ::1:55202 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [02-12-2024 18:27:21] Add of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:27:21] Add of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:27:21] Add of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:27:21] Add of existing embedding ID: doc_3
+[33mWARNING[0m:  [02-12-2024 18:27:21] Insert of existing embedding ID: doc_0
+[33mWARNING[0m:  [02-12-2024 18:27:21] Insert of existing embedding ID: doc_1
+[33mWARNING[0m:  [02-12-2024 18:27:21] Insert of existing embedding ID: doc_2
+[33mWARNING[0m:  [02-12-2024 18:27:21] Insert of existing embedding ID: doc_3
+[32mINFO[0m:     [02-12-2024 18:27:21] ::1:55202 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/add HTTP/1.1" 201
+[33mWARNING[0m:  [02-12-2024 18:27:33] Number of requested results 5 is greater than number of elements in index 4, updating n_results = 4
+[32mINFO[0m:     [02-12-2024 18:27:33] ::1:55222 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/a076cf92-725b-4b01-ae2e-d27433485fa6/query HTTP/1.1" 200
+[33mWARNING[0m:  [03-12-2024 15:46:34] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [03-12-2024 15:46:35] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [03-12-2024 15:46:35] Starting component System
+[36mDEBUG[0m:    [03-12-2024 15:46:35] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [03-12-2024 15:46:35] Starting component SqliteDB
+[36mDEBUG[0m:    [03-12-2024 15:46:35] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [03-12-2024 15:46:35] Starting component Posthog
+[36mDEBUG[0m:    [03-12-2024 15:46:35] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [03-12-2024 15:46:35] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [03-12-2024 15:46:35] Starting component LocalExecutor
+[36mDEBUG[0m:    [03-12-2024 15:46:35] Starting component SegmentAPI
+[32mINFO[0m:     [03-12-2024 15:46:35] Started server process [[36m15556[0m]
+[32mINFO[0m:     [03-12-2024 15:46:35] Waiting for application startup.
+[32mINFO[0m:     [03-12-2024 15:46:35] Application startup complete.
+[32mINFO[0m:     [03-12-2024 15:46:35] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [03-12-2024 18:38:37] Shutting down
+[32mINFO[0m:     [03-12-2024 18:38:37] Waiting for application shutdown.
+[36mDEBUG[0m:    [03-12-2024 18:38:37] Stopping component System
+[36mDEBUG[0m:    [03-12-2024 18:38:37] Stopping component SegmentAPI
+[36mDEBUG[0m:    [03-12-2024 18:38:37] Stopping component LocalExecutor
+[36mDEBUG[0m:    [03-12-2024 18:38:37] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [03-12-2024 18:38:37] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:38:37] Stopping component Posthog
+[36mDEBUG[0m:    [03-12-2024 18:38:37] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:38:37] Stopping component SqliteDB
+[36mDEBUG[0m:    [03-12-2024 18:38:37] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [03-12-2024 18:38:37] Application shutdown complete.
+[32mINFO[0m:     [03-12-2024 18:38:37] Finished server process [[36m15556[0m]
+[33mWARNING[0m:  [03-12-2024 18:38:47] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [03-12-2024 18:38:48] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [03-12-2024 18:38:48] Starting component System
+[36mDEBUG[0m:    [03-12-2024 18:38:48] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [03-12-2024 18:38:48] Starting component SqliteDB
+[36mDEBUG[0m:    [03-12-2024 18:38:48] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:38:48] Starting component Posthog
+[36mDEBUG[0m:    [03-12-2024 18:38:48] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:38:48] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [03-12-2024 18:38:48] Starting component LocalExecutor
+[36mDEBUG[0m:    [03-12-2024 18:38:48] Starting component SegmentAPI
+[32mINFO[0m:     [03-12-2024 18:38:49] Started server process [[36m22928[0m]
+[32mINFO[0m:     [03-12-2024 18:38:49] Waiting for application startup.
+[32mINFO[0m:     [03-12-2024 18:38:49] Application startup complete.
+[32mINFO[0m:     [03-12-2024 18:38:49] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)

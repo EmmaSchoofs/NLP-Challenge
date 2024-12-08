@@ -42,7 +42,7 @@ def process_input():
     st.session_state.messages.append({"role": "assistant", "content": response})
 
 def main():
-  st.title("DocueMentor")
+  st.title("DocuMentor")
 
   # Initialize the session_state.
   if len(st.session_state) == 0:

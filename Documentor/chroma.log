@@ -1,0 +1,96 @@
+[33mWARNING[0m:  [03-12-2024 18:54:37] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [03-12-2024 18:54:38] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Starting component System
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Starting component SqliteDB
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Starting component Posthog
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Starting component LocalExecutor
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Starting component SegmentAPI
+[32mINFO[0m:     [03-12-2024 18:54:38] Started server process [[36m29812[0m]
+[32mINFO[0m:     [03-12-2024 18:54:38] Waiting for application startup.
+[32mINFO[0m:     [03-12-2024 18:54:38] Application startup complete.
+[31mERROR[0m:    [03-12-2024 18:54:38] [Errno 10048] error while attempting to bind on address ('::1', 8000, 0, 0): elk socketadres (protocol/netwerkadres/poort) kan normaal slechts één keer worden gebruikt
+[32mINFO[0m:     [03-12-2024 18:54:38] Waiting for application shutdown.
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Stopping component System
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Stopping component SegmentAPI
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Stopping component LocalExecutor
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Stopping component Posthog
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Stopping component SqliteDB
+[36mDEBUG[0m:    [03-12-2024 18:54:38] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [03-12-2024 18:54:38] Application shutdown complete.
+[33mWARNING[0m:  [03-12-2024 18:56:00] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [03-12-2024 18:56:01] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Starting component System
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Starting component SqliteDB
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Starting component Posthog
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Starting component LocalExecutor
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Starting component SegmentAPI
+[32mINFO[0m:     [03-12-2024 18:56:01] Started server process [[36m11772[0m]
+[32mINFO[0m:     [03-12-2024 18:56:01] Waiting for application startup.
+[32mINFO[0m:     [03-12-2024 18:56:01] Application startup complete.
+[31mERROR[0m:    [03-12-2024 18:56:01] [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): elk socketadres (protocol/netwerkadres/poort) kan normaal slechts één keer worden gebruikt
+[32mINFO[0m:     [03-12-2024 18:56:01] Waiting for application shutdown.
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Stopping component System
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Stopping component SegmentAPI
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Stopping component LocalExecutor
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Stopping component Posthog
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Stopping component SqliteDB
+[36mDEBUG[0m:    [03-12-2024 18:56:01] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [03-12-2024 18:56:01] Application shutdown complete.
+[33mWARNING[0m:  [03-12-2024 18:56:41] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [03-12-2024 18:56:41] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [03-12-2024 18:56:41] Starting component System
+[36mDEBUG[0m:    [03-12-2024 18:56:41] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [03-12-2024 18:56:41] Starting component SqliteDB
+[36mDEBUG[0m:    [03-12-2024 18:56:41] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:56:41] Starting component Posthog
+[36mDEBUG[0m:    [03-12-2024 18:56:41] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:56:41] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [03-12-2024 18:56:41] Starting component LocalExecutor
+[36mDEBUG[0m:    [03-12-2024 18:56:41] Starting component SegmentAPI
+[32mINFO[0m:     [03-12-2024 18:56:42] Started server process [[36m12688[0m]
+[32mINFO[0m:     [03-12-2024 18:56:42] Waiting for application startup.
+[32mINFO[0m:     [03-12-2024 18:56:42] Application startup complete.
+[31mERROR[0m:    [03-12-2024 18:56:42] [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): elk socketadres (protocol/netwerkadres/poort) kan normaal slechts één keer worden gebruikt
+[32mINFO[0m:     [03-12-2024 18:56:42] Waiting for application shutdown.
+[36mDEBUG[0m:    [03-12-2024 18:56:42] Stopping component System
+[36mDEBUG[0m:    [03-12-2024 18:56:42] Stopping component SegmentAPI
+[36mDEBUG[0m:    [03-12-2024 18:56:42] Stopping component LocalExecutor
+[36mDEBUG[0m:    [03-12-2024 18:56:42] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [03-12-2024 18:56:42] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:56:42] Stopping component Posthog
+[36mDEBUG[0m:    [03-12-2024 18:56:42] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [03-12-2024 18:56:42] Stopping component SqliteDB
+[36mDEBUG[0m:    [03-12-2024 18:56:42] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [03-12-2024 18:56:42] Application shutdown complete.
+[33mWARNING[0m:  [03-12-2024 19:00:10] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [03-12-2024 19:00:11] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [03-12-2024 19:00:11] Starting component System
+[36mDEBUG[0m:    [03-12-2024 19:00:11] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [03-12-2024 19:00:11] Starting component SqliteDB
+[36mDEBUG[0m:    [03-12-2024 19:00:11] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [03-12-2024 19:00:11] Starting component Posthog
+[36mDEBUG[0m:    [03-12-2024 19:00:11] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [03-12-2024 19:00:11] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [03-12-2024 19:00:11] Starting component LocalExecutor
+[36mDEBUG[0m:    [03-12-2024 19:00:11] Starting component SegmentAPI
+[32mINFO[0m:     [03-12-2024 19:00:11] Started server process [[36m1808[0m]
+[32mINFO[0m:     [03-12-2024 19:00:11] Waiting for application startup.
+[32mINFO[0m:     [03-12-2024 19:00:11] Application startup complete.
+[32mINFO[0m:     [03-12-2024 19:00:11] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [03-12-2024 19:07:27] ::1:58629 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [03-12-2024 19:07:29] ::1:58629 - "GET /favicon.ico HTTP/1.1" 404
+[32mINFO[0m:     [03-12-2024 19:07:32] ::1:58629 - "GET / HTTP/1.1" 404
