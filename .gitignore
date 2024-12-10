@@ -2,3 +2,4 @@
 .env
 /venv
 init.ipynb
+/_pycache_
