@@ -13,7 +13,9 @@ class Rag:
 
     def __init__(self) -> None:
         self.csv_obj = cvs()
-        self.prompt = hub.pull("rlm/rag-prompt")
+        self.prompt_template = PromptTemplate(
+            template="{query_input}"  # Treat the entire string as a single variable
+        )
         self.model = ChatOllama(model="mistral")
 
     @staticmethod
@@ -51,7 +53,7 @@ class Rag:
         context_runnable = RunnablePassthrough(self.retriever)  # Ensure that retriever can be used here
 
         # Now augment context and question
-        self.chain = (context_runnable | self.prompt | self.model | StrOutputParser())
+        self.chain = (context_runnable | self.prompt_template | self.model | StrOutputParser())
 
     def ask(self, query: str):
         """Run the RAG pipeline to answer a question."""
@@ -71,18 +73,37 @@ class Rag:
         query = self.ensure_string(query)
 
         # Format context and query as a single string for input to the chain
-         # query_input = f"Context: {context}\nQuestion: {query}"
-        
-        query_input = {
-            "context": context,
-            "question": query
-        }       
+        query_input = f"Context: {context}\nQuestion: {query}"
 
-
-        # Run the chain with the retrieved context
-        response = self.chain.invoke(query_input)  # Pass the dictionary to the chain
+        # Pass the string to the chain as a dictionary
+        response = self.chain.invoke(query_input)  # Wrap in a dictionary with the correct key
 
         return response
+    
+    def query_dict(self, query_input: str) -> dict:
+        """
+        Convert a query_input string into a dictionary with 'context' and 'question' keys.
+
+        Args:
+            query_input (str): The input string formatted as:
+                            "Context: <context_text>\nQuestion: <question_text>"
+
+        Returns:
+            dict: A dictionary with keys 'context' and 'question'.
+        """
+        lines = query_input.split("\n")
+        result = {}
+        
+        for line in lines:
+            if line.startswith("Context:"):
+                result["context"] = line[len("Context:"):].strip()
+            elif line.startswith("Question:"):
+                result["question"] = line[len("Question:"):].strip()
+
+        result = self.chain.invoke(query_input)
+        
+        return result
+
 
     def feed(self, file_path):
         """Store the file into the vector database."""
