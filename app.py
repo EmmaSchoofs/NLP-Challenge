@@ -42,7 +42,7 @@ class PersonalizedLearningAssistant():
 
     @agent
     def researcher(self) -> Agent:
-        pdf_tool = tool_functions["PDFExtractionTool"](pdf_path=file_path)
+        pdf_tool = tool_functions["PDF Extraction Tool"](pdf_path=file_path)
         extracted_content = pdf_tool._run()
         self.researcher_content = extracted_content
         return Agent(
@@ -61,8 +61,8 @@ class PersonalizedLearningAssistant():
             llm=llm,
             config=self.agents_config['reporting_analyst'],
             tools= [
-            tool_functions["MarkdownFormatter"](content=extracted_content),
-            tool_functions["SummaryTool"](llm_tool=llm, content=extracted_content)
+            tool_functions["Markdown Formatter"](content=extracted_content),
+            tool_functions["Summary Tool"](llm_tool=llm, content=extracted_content)
             ],
             # args_schema={"content": "Default content for testing"},
             verbose=True
@@ -75,7 +75,7 @@ class PersonalizedLearningAssistant():
             config=self.tasks_config['research_task'],
             agents=[self.researcher()],
             tools=[
-                tool_functions["PDFExtractionTool"](pdf_path=file_path)
+                tool_functions["PDF Extraction Tool"](pdf_path=file_path)
             ],
         )
 
@@ -86,8 +86,8 @@ class PersonalizedLearningAssistant():
             config=self.tasks_config['reporting_task'],
             agents=[self.reporting_analyst()],
             tools=[
-                tool_functions["MarkdownFormatter"](),
-                tool_functions["SummaryTool"](llm_tool=llm)  
+                tool_functions["Markdown Formatter"](),
+                tool_functions["Summary Tool"](llm_tool=llm)  
             ],
             output_file='report.md', 
         )

@@ -50,37 +50,11 @@ class SummaryTool(BaseTool):
         return self.llm_tool.generate_summary(content)
 
 
-# class GroqLLMTool:
-#     def __init__(self, api_key, model_name):
-#         self.api_key = api_key
-#         self.model_name = model_name
-#         self.base_url = "https://api.groq.com/openai/v1/chat"
-
-#     def generate(self, prompt, max_tokens=100, temperature=0.7):
-#         headers = {
-#             "Authorization": f"Bearer {self.api_key}",
-#             "Content-Type": "application/json",
-#         }
-#         data = {
-#             "model": self.model_name,
-#             "prompt": prompt,
-#             "max_tokens": max_tokens,
-#             "temperature": temperature,
-#         }
-#         try:
-#             response = requests.post(f"{self.base_url}/completions", headers=headers, json=data)
-#             response.raise_for_status()
-#             result = response.json()
-#             return result.get("choices", [{}])[0].get("text", "")
-#         except requests.exceptions.RequestException as e:
-#             logging.error(f"Groq API Error: {e}")
-#             return "An error occurred while processing your request."
-
 # Map tools to their classes
 tool_functions = {
-    "PDFExtractionTool": lambda pdf_path: PDFExtractionTool(pdf_path=pdf_path),
-    "MarkdownFormatter": MarkdownFormatter,
-    "SummaryTool": lambda llm_tool, content = None: SummaryTool(llm_tool=llm_tool, content=content),
+    "PDF Extraction Tool": lambda pdf_path: PDFExtractionTool(pdf_path=pdf_path),
+    "Markdown Formatter": MarkdownFormatter,
+    "Summary Tool": lambda llm_tool, content = None: SummaryTool(llm_tool=llm_tool, content=content),
 }
 
 
