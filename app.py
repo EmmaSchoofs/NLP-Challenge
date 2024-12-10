@@ -10,23 +10,13 @@ import os
 from crewai_tools import PDFSearchTool
 import os
 
-cwd = os.getcwd()
-
-# List all files and directories in the CWD
-files = os.listdir(cwd)
-
-# Print the files
-print("Files in the current working directory:")
-for file in files:
-    print(file)
-
 # llm=ChatGroq(temperature=0,
 #              model_name="llama-3.1-70b-versatile",
 #              api_key=os.getenv("GROQ_API_KEY"))
 
 task_values = []
 # pdfsearchtool = PDFSearchTool(pdf="Nexus_review.pdf")
-file_path = './Nexus_review.pdf'
+file_path = './test.pdf'
 
 @CrewBase
 class PersonalizedLearningAssistant():
@@ -89,7 +79,7 @@ class PersonalizedLearningAssistant():
                 tool_functions["Markdown Formatter"](),
                 tool_functions["Summary Tool"](llm_tool=llm)  
             ],
-            output_file='report.md', 
+            output_file='report.md',
         )
 
 

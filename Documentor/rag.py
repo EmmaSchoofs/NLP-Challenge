@@ -5,6 +5,8 @@ from langchain.prompts import PromptTemplate
 from langchain_community.chat_models import ChatOllama
 import json
 from langchain import hub
+from langchain_groq import ChatGroq
+import os
 
 class Rag:
     vector_store = None
@@ -16,7 +18,11 @@ class Rag:
         self.prompt_template = PromptTemplate(
             template="{query_input}"  # Treat the entire string as a single variable
         )
-        self.model = ChatOllama(model="mistral")
+        self.model = ChatGroq(
+            temperature=0,
+            model_name="llama-3.1-70b-versatile",
+            api_key=os.getenv("GROQ_API_KEY")
+        )
 
     @staticmethod
     def ensure_string(input_data):
